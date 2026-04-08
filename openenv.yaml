@@ -1,0 +1,28 @@
+name: train-control-env
+description: Intelligent Train Control RL Environment for safe and efficient stopping
+version: 1.0.0
+
+entrypoint:
+  type: http
+  url: /
+
+endpoints:
+  reset:
+    path: /reset
+    method: POST
+
+  step:
+    path: /step
+    method: POST
+
+observation:
+  type: json
+
+action:
+  type: json
+
+reward:
+  type: float
+
+done:
+  type: boolean
