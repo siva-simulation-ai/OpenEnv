@@ -8,6 +8,12 @@ class TrainState:
     speed: float
     distance: float
 
+from pydantic import BaseModel
+
+class TrainAction(BaseModel):
+    accelerate: float
+    brake: float
+
 
 # ---------------------------
 # Action
