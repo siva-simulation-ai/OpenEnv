@@ -1,19 +1,17 @@
+[project]
+name = "train_control_env"
+version = "0.1.0"
+description = "Train RL Environment"
+authors = [{name = "Siva Epuri"}]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic"
+]
+
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
-[project]
-name = "train-control-env"
-version = "0.1.0"
-description = "Intelligent Train Control RL Environment"
-authors = [{ name = "Siva Epuri" }]
-readme = "README.md"
-license = { text = "MIT" }
-requires-python = ">=3.10"
-
-dependencies = [
-    "fastapi>=0.95.0",
-    "uvicorn[standard]>=0.22.0",
-    "pydantic>=1.10.0",
-    "openenv"
-]
+[tool.setuptools]
+packages = ["my_env"]
