@@ -1,0 +1,14 @@
+# OpenEnv lock file
+version = 1
+
+[[package]]
+name = "fastapi"
+version = "0.135.3"
+
+[[package]]
+name = "uvicorn"
+version = "0.44.0"
+
+[[package]]
+name = "pydantic"
+version = "2.12.5"
