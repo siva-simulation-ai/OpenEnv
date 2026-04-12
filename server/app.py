@@ -1,23 +1,19 @@
 from fastapi import FastAPI
 from my_env.env import TrainEnv, TrainAction
 
-app = FastAPI(
-    title="Train Control RL Environment",
-    docs_url="/docs",
-    openapi_url="/openapi.json",
-)
+app = FastAPI()
 
 env = TrainEnv()
 
 @app.get("/")
 def root():
-    return {"status": "ok"}
+    return {"status": "OK"}
 
 @app.post("/reset")
 def reset():
     state = env.reset()
     return {
-        "state": state.dict() if hasattr(state, "dict") else state,
+        "state": state.__dict__,
         "reward": 0,
         "done": False
     }
@@ -26,10 +22,7 @@ def reset():
 def step(action: TrainAction):
     state, reward, done, _ = env.step(action)
     return {
-        "state": state.dict() if hasattr(state, "dict") else state,
+        "state": state.__dict__,
         "reward": reward,
         "done": done
     }
-
-def main():
-    return app
